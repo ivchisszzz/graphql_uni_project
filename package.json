@@ -1,0 +1,39 @@
+{
+  "name": "university-node-project",
+  "version": "1.0.0",
+  "description": "university project",
+  "main": "node build/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node build/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build"
+   
+  },
+  "keywords": [
+    "typegraphql",
+    "typescript"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@typegoose/typegoose": "^9.8.1",
+    "apollo-server-core": "^3.7.0",
+    "apollo-server-express": "^3.7.0",
+    "body-parser": "^1.20.0",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^15.3.0",
+    "http": "0.0.1-security",
+    "mongoose": "^6.3.4",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.8.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
+  }
+}
