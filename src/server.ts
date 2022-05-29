@@ -1,6 +1,9 @@
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
-import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
+import {
+  ApolloServerPluginDrainHttpServer,
+  ApolloServerPluginLandingPageGraphQLPlayground,
+} from "apollo-server-core";
 import "reflect-metadata";
 import http from "http";
 import bodyParser from "body-parser";
@@ -41,7 +44,10 @@ async function startApolloServer() {
   const schema = await getSchema();
   const server = new ApolloServer({
     schema,
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      ApolloServerPluginLandingPageGraphQLPlayground(),
+    ],
     introspection: true,
   });
   await server.start();
